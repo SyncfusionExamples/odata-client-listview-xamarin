@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewXamarin;assembly=ListViewXamarin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             Title="Package Details" Padding="10,10,10,5"
+             x:Class="ListViewXamarin.MainPage">
+
+    <StackLayout>
+        <Label Text="{Binding Path=Title, Source={RelativeSource AncestorType={x:Type ContentPage}}}"/>
+        <Label x:Name="titleLabel" Text="{Binding Path=Title}" FontSize="Large"/>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="packageID" Text="Package Id:"/>
+            <Label x:Name="id" Text="{Binding ID}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label  Text="Current version:"/>
+            <Label x:Name="currentVersion" Text="{Binding CurrentVersion}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label  Text="Released:"/>
+            <Label x:Name="released" Text="{Binding CurrentVersionReleaseDate, StringFormat='{}{0:yyyy-MM-dd}'}"/>
+        </StackLayout>
+        <Label/>
+        <Label  Text="Downloads"/>
+        <StackLayout Orientation="Horizontal">
+            <Label  Text="Total:"/>
+            <Label x:Name="totalDownloads" Text="{Binding TotalDownloads, StringFormat='{}{0}'}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label  Text="Current version:"/>
+            <Label x:Name="currentVersionDownloads" Text="{Binding CurrentVersionDownloads, StringFormat='{}{0}'}"/>
+        </StackLayout>
+        <Label/>
+        <Label  Text="Authors:"/>
+        <Label x:Name="authors" Text="{Binding Authors}"/>
+        <Label/>
+    </StackLayout>
+</ContentPage>

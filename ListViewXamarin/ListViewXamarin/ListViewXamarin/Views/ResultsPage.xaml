@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Search Results"
+             xmlns:local="clr-namespace:ListViewXamarin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="ListViewXamarin.ResultsPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Button Text="Get Data" Command="{Binding SearchCommand}"/>
+            <Grid>
+                <ActivityIndicator  HeightRequest="100" 
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+                                    IsEnabled="True" 
+                                    IsRunning="True" 
+                                    IsVisible="{Binding IsVisible}"/>
+                <syncfusion:SfListView ItemsSource="{Binding Packages}"
+                                        AutoFitMode="DynamicHeight"
+                                        >
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Padding="5,5"
+                                                    Orientation="Vertical"
+                                                    VerticalOptions="FillAndExpand">
+                                        <Label Text="{Binding ShortSummary}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
