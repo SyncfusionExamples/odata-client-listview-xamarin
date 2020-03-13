@@ -1,10 +1,14 @@
 # How to bind OData to Xamarin.Forms ListView (SfListView) ?
-You can bind the OData as the DataSource to SfListView using the OData Client library in Xamarin.Forms.
+You can bind the OData as the DataSource to SfListView using the OData Client library in Xamarin.Forms. The following article explains you about how to bind OData to ListView.
+
+https://www.syncfusion.com/kb/11211/how-to-bind-odata-to-xamarin-forms-listview-sflistview
 
 **NuGet to use ODataClient in your application**
+
 You need to install the Simple.OData.Client to your application to feed the OData to SfListView.
 
 **C#**
+
 Fetches the OData using ODataClient using the OData library.
 ``` c#
 private void SetSource(IEnumerable<Package> packages)
@@ -28,6 +32,7 @@ private async Task<IEnumerable<Package>> GetPackages()
 }
 ```
 **C#**
+
 Bind the OData to SfListView.
 ```xml
 <syncfusion:SfListView ItemsSource="{Binding Packages}"
