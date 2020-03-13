@@ -9,10 +9,10 @@ using Xamarin.Forms;
 
 namespace ListViewXamarin
 {
-	  public partial class MainPage : ContentPage
+	  public partial class DetailsPage : ContentPage
     {
         #region Constructor
-        public MainPage()
+        public DetailsPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true);

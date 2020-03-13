@@ -9,7 +9,7 @@
         <local:ViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout Margin="20" VerticalOptions="FillAndExpand">
             <Button Text="Get Data" Command="{Binding SearchCommand}"/>
             <Grid>
                 <ActivityIndicator  HeightRequest="100" 
@@ -20,6 +20,7 @@
                                     IsVisible="{Binding IsVisible}"/>
                 <syncfusion:SfListView ItemsSource="{Binding Packages}"
                                         AutoFitMode="DynamicHeight"
+                                       TapCommand="{Binding TapCommand}"
                                         >
                     <syncfusion:SfListView.ItemTemplate>
                         <DataTemplate>

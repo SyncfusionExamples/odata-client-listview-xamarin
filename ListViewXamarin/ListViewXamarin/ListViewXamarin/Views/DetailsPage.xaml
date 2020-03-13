@@ -4,14 +4,14 @@
              xmlns:local="clr-namespace:ListViewXamarin;assembly=ListViewXamarin"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              Title="Package Details" Padding="10,10,10,5"
-             x:Class="ListViewXamarin.MainPage">
+             x:Class="ListViewXamarin.DetailsPage">
 
     <StackLayout>
         <Label Text="{Binding Path=Title, Source={RelativeSource AncestorType={x:Type ContentPage}}}"/>
         <Label x:Name="titleLabel" Text="{Binding Path=Title}" FontSize="Large"/>
         <StackLayout Orientation="Horizontal">
             <Label x:Name="packageID" Text="Package Id:"/>
-            <Label x:Name="id" Text="{Binding ID}"/>
+            <Label x:Name="id" Text="{Binding Id}"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label  Text="Current version:"/>

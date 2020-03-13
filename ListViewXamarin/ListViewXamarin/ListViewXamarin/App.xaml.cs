@@ -11,7 +11,7 @@ namespace ListViewXamarin
         {
             InitializeComponent();
             Simple.OData.Client.V4Adapter.Reference();
-            MainPage = new ResultsPage();
+            MainPage = new NavigationPage(new ResultsPage());
         }
 
         protected override void OnStart()

@@ -24,6 +24,7 @@ namespace ListViewXamarin
             }
         }
         public Command SearchCommand { get; set; }
+        public Command TapCommand { get; set; }
         public IEnumerable<PackageViewModel> Packages
         {
             get { return packages; }
@@ -33,11 +34,13 @@ namespace ListViewXamarin
                 OnPropertyChanged("Packages");
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ViewModel()
         {
             SearchCommand = new Command(OnSearch);
+            TapCommand = new Command(OnTapped);
             Packages = new ObservableCollection<PackageViewModel>();
         }
 
@@ -62,7 +65,14 @@ namespace ListViewXamarin
                 IsVisible = false;
             }
         }
-
+        private void OnTapped(object obj)
+        {
+            var package = (obj as Syncfusion.ListView.XForms.ItemTappedEventArgs).ItemData as PackageViewModel;
+            var detailsPage = new DetailsPage();
+            detailsPage.BindingContext = package;
+            (Application.Current.MainPage as NavigationPage).PushAsync(detailsPage);
+        }
+            
         private void SetSource(IEnumerable<Package> packages)
         {
             Packages = packages.Select(x => new PackageViewModel(x));
